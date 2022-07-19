@@ -8,14 +8,13 @@ try:
         num_lines=len(str1)
         num_char=0
         num_words=0
-        for i in range(num_lines):
-            str2=str1[i].split()
-            num_words=num_words+len(str2)
+        for element in str1:
+            str2=element.split()
+            num_words+=len(str2)
             for item in str2:
                 for n in item: 
                     if item.isdigit() or item.isalpha():
                         num_char+=1
-        
         print('\nnumber of lines in given file is ',num_lines)
         print('\nnumber of words in given file is ',num_words)
         print('\nnumber of character given file is ',num_char)
