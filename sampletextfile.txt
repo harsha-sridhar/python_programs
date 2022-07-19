@@ -1,0 +1,4 @@
+SELECT date
+date
+channel
+5
