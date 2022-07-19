@@ -4,15 +4,18 @@ try:
     n=len(sys.argv)
     if n==2:
         fileObject = open(sys.argv[1], "r")
-        str1=fileObject.read()
-        num_lines=0
+        str1=fileObject.readlines()
+        num_lines=len(str1)
         num_char=0
-        num_words=len(str1.split())
-        for i in str1:
-            if i=='\n':
-                num_lines+=1
-            if i.isdigit() or i.isalpha():
-                num_char+=1
+        num_words=0
+        for i in range(num_lines):
+            str2=str1[i].split()
+            num_words=num_words+len(str2)
+            for item in str2:
+                for n in item: 
+                    if item.isdigit() or item.isalpha():
+                        num_char+=1
+        
         print('\nnumber of lines in given file is ',num_lines)
         print('\nnumber of words in given file is ',num_words)
         print('\nnumber of character given file is ',num_char)
